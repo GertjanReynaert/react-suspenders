@@ -11,6 +11,12 @@ var styles = pickFiles('styles', {
   destDir: '/dist'
 });
 
+var react = pickFiles('node_modules', {
+  srcDir: '/react/dist',
+  files: ['react.js'],
+  destDir: 'dist'
+});
+
 var appJs = pickFiles('app', {
   srcDir: '/',
   destDir: 'dist'
@@ -26,6 +32,7 @@ var appCss = compileLess([styles], 'dist/app.less', 'assets/app.css' );
 appCss = autoprefixer(appCss);
 
 //concat all javascript files
+appJs = new mergeTrees([react, appJs], { overwrite: true });
 appJs = concat(appJs, {
   inputFiles: [
     'dist/*.js'
