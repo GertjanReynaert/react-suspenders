@@ -4,8 +4,8 @@ Project setup to easily start creating a Reactjs component, or app
 
 ## Setup
 
-Currently there is no installer available, so just unzip the zip file and rename
-the folder to your project name
+Currently there is no installer available, so just copy the suspenders folder
+and rename the folder to your project name
 
 run `npm install`
 
